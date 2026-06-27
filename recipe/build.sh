@@ -12,6 +12,7 @@ export FC=$(basename "$FC")
 
 export LLVM_CONFIG=$PREFIX/bin/llvm-config
 export CLANG=$CC
+export CLANGXX=$CXX
 
 EXTRA_FEATURES=""
 EXTRA_CONFIG_ARGS=""

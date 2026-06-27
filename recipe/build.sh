@@ -5,15 +5,6 @@ set -exo pipefail
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./config
 
-# avoid absolute-paths in compilers
-export CC=$(basename "$CC")
-export CXX=$(basename "$CXX")
-export FC=$(basename "$FC")
-
-export LLVM_CONFIG=$PREFIX/bin/llvm-config
-export CLANG=$CC
-export CLANGXX=$CXX
-
 EXTRA_FEATURES=""
 EXTRA_CONFIG_ARGS=""
 

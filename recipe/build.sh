@@ -14,6 +14,9 @@ fi
 
 if [[ "${target_platform}" != win* ]]; then
     EXTRA_FEATURES+=" --with-llvm"
+    export CFLAGS="${CFLAGS//-flto=thin/} -fno-lto"
+    export CXXFLAGS="${CXXFLAGS//-flto=thin/} -fno-lto"
+    export LDFLAGS="${LDFLAGS//-flto=thin/} -fno-lto"
 fi
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" && "${target_platform}" == linux* ]]; then

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -exo pipefail
+set -x
 
 make install
 make install -C contrib

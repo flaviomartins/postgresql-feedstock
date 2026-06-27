@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -exo pipefail
+
 make install
 mkdir backup
 mv $PREFIX/bin/pg_config backup

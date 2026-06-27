@@ -38,10 +38,8 @@ requirements:
     - m2-flex          # [win]
     - icu
     - llvm-tools {{ llvm_version }}.*
-    - llvmdev    {{ llvm_version }}.*
   host:
     - llvm-tools {{ llvm_version }}.*
-    - llvmdev    {{ llvm_version }}.*
     - icu
     - liburing        # [linux]
     - libxml2-devel
@@ -89,10 +87,8 @@ outputs:
         - posix                # [win]
         - icu
         - llvm-tools {{ llvm_version }}.*
-        - llvmdev    {{ llvm_version }}.*
       host:
         - llvm-tools {{ llvm_version }}.*
-        - llvmdev    {{ llvm_version }}.*
         # these are here for sake of run_exports taking effect
         - icu
         - liburing            # [linux]
@@ -159,7 +155,9 @@ outputs:
         - m2-flex                # [win]
         - posix                  # [win]
         - icu
+        - llvm-tools {{ llvm_version }}.*
       host:
+        - llvm-tools {{ llvm_version }}.*
         # these are here for sake of run_exports taking effect
         - icu
         - libxml2-devel
@@ -208,7 +206,9 @@ outputs:
         - m2-flex                # [win]
         - posix                  # [win]
         - icu
+        - llvm-tools {{ llvm_version }}.*
       host:
+        - llvm-tools {{ llvm_version }}.*
         # these are here for sake of run_exports taking effect
         - icu
         - krb5

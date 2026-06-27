@@ -10,11 +10,18 @@ export CC=$(basename "$CC")
 export CXX=$(basename "$CXX")
 export FC=$(basename "$FC")
 
+export LLVM_CONFIG=$PREFIX/bin/llvm-config
+export CLANG=$CC
+
 EXTRA_FEATURES=""
 EXTRA_CONFIG_ARGS=""
 
 if [[ "${target_platform}" == linux* ]]; then
     EXTRA_FEATURES+=" --with-liburing"
+fi
+
+if [[ "${target_platform}" != win* ]]; then
+    EXTRA_FEATURES+=" --with-llvm"
 fi
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" && "${target_platform}" == linux* ]]; then

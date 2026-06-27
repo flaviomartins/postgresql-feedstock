@@ -52,9 +52,6 @@ make -j $CPU_COUNT
 make -j $CPU_COUNT -C contrib
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-    # make check # Failing with 'initdb: cannot be run as root'.
-    if [ "${target_platform}" != "linux-ppc64le" ]; then
-        make check
-        make check -C contrib
-    fi
+    make check
+    make check -C contrib
 fi
